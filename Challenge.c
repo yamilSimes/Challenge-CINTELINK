@@ -135,39 +135,39 @@ void registrarLog (char *log , size_t transaction_count, Transactions sortedTran
 	
 	while( count < transaction_count)
 	{
-		log[0 + cant_bytes] = sortedTransactions[count].fecha_transaccion.mes << 8;
+		log[0 + cant_bytes] = sortedTransactions[count].fecha_transaccion.mes >> 8;
 		log[1 + cant_bytes] = sortedTransactions[count].fecha_transaccion.mes;
 		log[2 + cant_bytes] = '/';
-		log[3 + cant_bytes] = sortedTransactions[count].fecha_transaccion.dia << 8;
+		log[3 + cant_bytes] = sortedTransactions[count].fecha_transaccion.dia >> 8;
 		log[4 + cant_bytes] = sortedTransactions[count].fecha_transaccion.dia;
 		log[5 + cant_bytes] = '/';
-		log[6 + cant_bytes] = sortedTransactions[count].fecha_transaccion.anio << 8;
-		log[7 + cant_bytes] = sortedTransactions[count].fecha_transaccion.anio << 16;
-		log[8 + cant_bytes] = sortedTransactions[count].fecha_transaccion.anio << 32;
+		log[6 + cant_bytes] = sortedTransactions[count].fecha_transaccion.anio >> 8;
+		log[7 + cant_bytes] = sortedTransactions[count].fecha_transaccion.anio >> 16;
+		log[8 + cant_bytes] = sortedTransactions[count].fecha_transaccion.anio >> 32;
 		log[9 + cant_bytes] = sortedTransactions[count].fecha_transaccion.anio;
 		log[10 + cant_bytes] = ' ';
-		log[11 + cant_bytes] = sortedTransactions[count].fecha_transaccion.hora << 8;
+		log[11 + cant_bytes] = sortedTransactions[count].fecha_transaccion.hora >> 8;
 		log[12 + cant_bytes] = sortedTransactions[count].fecha_transaccion.hora;
 		log[13 + cant_bytes] = ':';
-		log[14 + cant_bytes] = sortedTransactions[count].fecha_transaccion.minuto << 8;
+		log[14 + cant_bytes] = sortedTransactions[count].fecha_transaccion.minuto >> 8;
 		log[15 + cant_bytes] = sortedTransactions[count].fecha_transaccion.minuto;
 		log[16 + cant_bytes] = ':';
-		log[17 + cant_bytes] = sortedTransactions[count].fecha_transaccion.sec << 8;
+		log[17 + cant_bytes] = sortedTransactions[count].fecha_transaccion.sec >> 8;
 		log[18 + cant_bytes] = sortedTransactions[count].fecha_transaccion.sec;
-		log[19 + cant_bytes] = sortedTransactions[count].vehicle_registration << 256;
-		log[20 + cant_bytes] = sortedTransactions[count].vehicle_registration << 128;
-		log[21 + cant_bytes] = sortedTransactions[count].vehicle_registration << 64;
+		log[19 + cant_bytes] = sortedTransactions[count].vehicle_registration >> 256;
+		log[20 + cant_bytes] = sortedTransactions[count].vehicle_registration >> 128;
+		log[21 + cant_bytes] = sortedTransactions[count].vehicle_registration >> 64;
 		log[22 + cant_bytes] = ' ';
-		log[23 + cant_bytes] = sortedTransactions[count].vehicle_registration << 32;
-		log[24 + cant_bytes] = sortedTransactions[count].vehicle_registration << 16;
-		log[25 + cant_bytes] = sortedTransactions[count].vehicle_registration << 8;
+		log[23 + cant_bytes] = sortedTransactions[count].vehicle_registration >> 32;
+		log[24 + cant_bytes] = sortedTransactions[count].vehicle_registration >> 16;
+		log[25 + cant_bytes] = sortedTransactions[count].vehicle_registration >> 8;
 		log[26 + cant_bytes] = sortedTransactions[count].vehicle_registration;
 		log[27 + cant_bytes] = sortedTransactions[count].product;
-		log[28 + cant_bytes] = sortedTransactions[count].mililiters << 32;
-		log[29 + cant_bytes] = sortedTransactions[count].mililiters << 16;
-		log[30 + cant_bytes] = sortedTransactions[count].mililiters << 8;
+		log[28 + cant_bytes] = sortedTransactions[count].mililiters >> 32;
+		log[29 + cant_bytes] = sortedTransactions[count].mililiters >> 16;
+		log[30 + cant_bytes] = sortedTransactions[count].mililiters >> 8;
 		log[31 + cant_bytes] = sortedTransactions[count].mililiters;
-		log[32 + cant_bytes] = sortedTransactions[count].transaction_id << 8;
+		log[32 + cant_bytes] = sortedTransactions[count].transaction_id >> 8;
 		log[33 + cant_bytes] = sortedTransactions[count].transaction_id;
 		
 		count++;	
